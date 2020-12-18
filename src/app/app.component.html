@@ -1,0 +1,16 @@
+<div>
+  <div class="jumbotron text-center" style="margin-bottom:0">
+    <h1>User Table</h1>
+  </div>
+<app-input-form (onAddGetAll)="onAddGetAll()"></app-input-form>
+
+  <div  class='container' style= "margin-top:3%">
+        <p class='error text-center'>{{updateError}}</p>
+    <app-table-row (voted)="onVoted($event)" (selectedRead)="onRead($event)" (changeUpdateError)="changeUpdateError($event)" [users]="users" [update]="update" [editable]="editable"></app-table-row>
+  </div>
+    <div class = {{agreed}} >
+     <app-details (voted)="onVoted($event)" [selectedRead]="myselectedRead" ></app-details>
+    </div>
+   
+  <div class='jumbotron text-center' style="margin-bottom:0"></div>
+</div>

@@ -1,0 +1,18 @@
+.readButton {
+  background-color: rgba(214, 213, 211, 0.897);
+  border-color: rgba(214, 213, 211, 0.897);
+  color: black;
+}
+
+.blue {
+  background-color: blue;
+  color: white;
+}
+
+.notblue {
+  color: black;
+}
+.btn {
+  font-weight: 500;
+  margin: 1%;
+}

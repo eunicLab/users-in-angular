@@ -1,0 +1,114 @@
+<table class='table table-striped table-bordered'>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email Address</th>
+            <th>Mobile Number</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+<tr id='tableRow' *ngFor= 'let user of users index as index'>
+    <ng-container *ngIf="highlighted.id===user.id && editable[index]==='false'">
+        <td (click)="highlight(user)" class='blue' contenteditable="false">{{user.name}}</td>
+    </ng-container>
+    <ng-container *ngIf="highlighted.id!==user.id && editable[index]==='false'">
+        <td (click)="highlight(user)" contenteditable="false">{{user.name}}</td>
+    </ng-container>
+    <ng-container *ngIf="highlighted.id===user.id && editable[index]==='true'">
+        <td (click)="highlight(user)" id="userName{{index}}" class='blue' contenteditable="true">{{user.name}}</td>
+    </ng-container>
+    <ng-container *ngIf="highlighted.id!==user.id && editable[index]==='true'">
+        <td (click)="highlight(user)" id="userName{{index}}"  contenteditable="true">{{user.name}}</td>
+    </ng-container>
+
+
+
+    <ng-container *ngIf="highlighted.id===user.id && editable[index]==='false'">
+        <td (click)="highlight(user)" class='blue' contenteditable="false">{{user.email}}</td>
+    </ng-container>
+    <ng-container *ngIf="highlighted.id!==user.id && editable[index]==='false'">
+        <td (click)="highlight(user)" contenteditable="false">{{user.email}}</td>
+    </ng-container>
+    <ng-container *ngIf="highlighted.id===user.id && editable[index]==='true'">
+        <td (click)="highlight(user)" id="email{{index}}" class='blue' contenteditable="true">{{user.email}}</td>
+    </ng-container>
+    <ng-container *ngIf="highlighted.id!==user.id && editable[index]==='true'">
+        <td (click)="highlight(user)" id="email{{index}}"  contenteditable="true">{{user.email}}</td>
+    </ng-container>
+
+    <ng-container *ngIf="highlighted.id===user.id && editable[index]==='false'">
+        <td (click)="highlight(user)" class='blue' contenteditable="false">{{user.phone}}</td>
+    </ng-container>
+    <ng-container *ngIf="highlighted.id!==user.id && editable[index]==='false'">
+        <td (click)="highlight(user)" contenteditable="false">{{user.phone}}</td>
+    </ng-container>
+    <ng-container *ngIf="highlighted.id===user.id && editable[index]==='true'">
+        <td (click)="highlight(user)" id="phone{{index}}" class='blue' contenteditable="true">{{user.phone}}</td>
+    </ng-container>
+    <ng-container *ngIf="highlighted.id!==user.id && editable[index]==='true'">
+        <td (click)="highlight(user)" id="phone{{index}}"  contenteditable="true">{{user.phone}}</td>
+    </ng-container>
+   
+    <ng-container *ngIf="highlighted.id===user.id && editable[index]==='false'" >
+    <td class='blue'  (click)="highlight(user)">
+        <button  (click)="read(user, $event)"   class='btn btn-default readButton'>
+            Read
+        </button>
+        <button class='btn btn-success' (click)="updateClicked(user, index, $event)">
+          {{update[index]}}
+        </button>
+        <button class='btn btn-danger' (click)="deleteUser(user)" >
+            Delete
+        </button>
+    </td>
+    </ng-container>
+
+    <ng-container *ngIf="highlighted.id!==user.id && editable[index]==='false'">
+        <td  (click)="highlight(user)">
+            <button (click)="read(user, $event)" class='btn btn-default readButton'>
+                Read
+            </button>
+            <button class='btn btn-success' (click)="updateClicked(user, index, $event)">
+                {{update[index]}}
+            </button>
+            <button class='btn btn-danger' (click)="deleteUser(user)">
+                Delete
+            </button>
+        </td>
+    </ng-container>
+
+    <ng-container *ngIf="highlighted.id===user.id && editable[index]==='true'">
+            <td (click)="highlight(user)" class='blue'>
+                <button (click)="read(user, $event)" class='btn btn-default readButton'>
+                    Read
+                </button>
+                <button class='btn btn-success' (click)="updateClicked(user, index, $event)">
+                    {{update[index]}}
+                </button>
+                <button class='btn btn-danger' (click)="deleteUser(user)">
+                    Delete
+                </button>
+            </td>
+    </ng-container>
+
+    <ng-container *ngIf="highlighted.id!==user.id && editable[index]==='true'">
+        <td (click)="highlight(user)">
+            <button (click)="read(user, $event)" class='btn btn-default readButton'>
+                Read
+            </button>
+            <button class='btn btn-success' (click)="updateClicked(user, index, $event)">
+                {{update[index]}}
+            </button>
+            <button class='btn btn-danger' (click)="deleteUser(user)">
+                Delete
+            </button>
+        </td>
+    </ng-container>
+
+  
+   
+</tr>
+</table>

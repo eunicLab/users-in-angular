@@ -1,0 +1,10 @@
+.btn {
+  font-weight: 500;
+  margin: 1%;
+}
+.form-control {
+  width: 40%;
+}
+.error {
+  color: red;
+}
